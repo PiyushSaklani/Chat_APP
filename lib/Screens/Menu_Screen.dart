@@ -132,11 +132,6 @@ class MenuScreen extends StatelessWidget {
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
-                    // ListTile(
-                    //   onTap: () {},
-                    //   leading: const Icon(Icons.settings),
-                    //   title: const Text("Setting"),
-                    // ),
                     ListTile(
                       onTap: () {
                         context.read<USERS>().userId();

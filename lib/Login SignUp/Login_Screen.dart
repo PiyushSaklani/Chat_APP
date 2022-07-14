@@ -44,19 +44,11 @@ class _LoginScreenState extends State<LoginScreen> {
       log("User already exists!😊");
       Navigator.pushAndRemoveUntil(context,
           MaterialPageRoute(builder: (context) => MyApp()), (route) => false);
-      // log(_firestore.collection("users").doc("name").get().toString());
     } else {
       Navigator.push(
           context,
           (MaterialPageRoute(
               builder: (context) => Google_UpdateProfileScreen())));
-      // await _firestore.collection("users").doc(userCredential.user!.uid).set({
-      // "name": userCredential.user!.displayName,
-      // "email": userCredential.user!.email,
-      // "image": userCredential.user!.photoURL,
-      // "uid": userCredential.user!.uid,
-      // "date": DateTime.now(),
-      // });
     }
   }
 

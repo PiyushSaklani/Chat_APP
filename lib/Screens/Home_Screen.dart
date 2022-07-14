@@ -22,12 +22,6 @@ class HomeScreen extends StatelessWidget {
         shadowColor: kSecondaryColor.withOpacity(.1),
         leading: IconButton(
           onPressed: () async {
-            // await GoogleSignIn().signOut();
-            // await FirebaseAuth.instance.signOut();
-            // Navigator.pushAndRemoveUntil(
-            //     context,
-            //     MaterialPageRoute(builder: (context) => LoginScreen()),
-            //     (route) => false);
             context.read<USERS>().getUserinfo();
             Navigator.push(
                 context,
@@ -39,7 +33,6 @@ class HomeScreen extends StatelessWidget {
           },
           icon: Container(
             alignment: Alignment.center,
-            // margin: const EdgeInsets.only(right: 10),
             height: 30,
             width: 30,
             child: const Icon(
@@ -47,17 +40,8 @@ class HomeScreen extends StatelessWidget {
               size: 34,
               color: Colors.white,
             ),
-            // child: Image(
-            //   image: AssetImage("assets/images/menu.png"),
-            // ),
           ),
-          // icon: const Icon(
-          //   Icons.logout,
-          //   color: Colors.white,
-          // ),
         ),
-
-        // title: const Text("Home Screen"),
         actions: [
           Container(
             padding: const EdgeInsets.all(7),
@@ -70,9 +54,6 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          // ZoomDrawer(
-          //     menuScreen: const MenuScreen(),
-          //     mainScreen: HomeScreen(user: user)),
           const SizedBox(
             height: 30,
           ),
@@ -86,22 +67,8 @@ class HomeScreen extends StatelessWidget {
               );
             },
             child: SizedBox(
-              // margin: const EdgeInsets.only(left: 20, right: 20),
               width: size.width,
               height: 50,
-              // decoration: BoxDecoration(
-              //   color: Colors.white,
-              //   borderRadius: BorderRadius.circular(50),
-              //   // border: Border.all(width: 1.5, color: kSecondaryColor),
-              //   boxShadow: [
-              //     BoxShadow(
-              //       color: kSecondaryColor.withOpacity(.1),
-              //       spreadRadius: 5,
-              //       blurRadius: 10,
-              //       offset: const Offset(0, 3), // changes position of shadow
-              //     ),
-              //   ],
-              // ),
               child: Row(
                 children: [
                   Container(
@@ -111,14 +78,13 @@ class HomeScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: kSecondaryColor.withOpacity(.9),
                       borderRadius: BorderRadius.circular(50),
-                      // border: Border.all(width: 1.5, color: kSecondaryColor),
                       boxShadow: [
                         BoxShadow(
                           color: kSecondaryColor.withOpacity(.3),
                           spreadRadius: 5,
                           blurRadius: 10,
                           offset:
-                              const Offset(0, 3), // changes position of shadow
+                              const Offset(0, 3),
                         ),
                       ],
                     ),
@@ -139,14 +105,13 @@ class HomeScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(50),
-                      // border: Border.all(width: 1.5, color: kSecondaryColor),
                       boxShadow: [
                         BoxShadow(
                           color: kSecondaryColor.withOpacity(.1),
                           spreadRadius: 5,
                           blurRadius: 10,
                           offset:
-                              const Offset(0, 3), // changes position of shadow
+                              const Offset(0, 3),
                         ),
                       ],
                     ),
@@ -196,7 +161,6 @@ class HomeScreen extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(10),
-                                      // border: Border.all(width: 1.5, color: kSecondaryColor),
                                       boxShadow: [
                                         BoxShadow(
                                           color:
@@ -204,7 +168,7 @@ class HomeScreen extends StatelessWidget {
                                           spreadRadius: 5,
                                           blurRadius: 10,
                                           offset: const Offset(0,
-                                              3), // changes position of shadow
+                                              3),
                                         ),
                                       ],
                                     ),
@@ -263,20 +227,13 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     Navigator.push(
-      //       context,
-      //       MaterialPageRoute(
-      //         builder: (context) => SearchScreen(user: user),
-      //       ),
-      //     );
-      //   },
-      //   child: const Icon(Icons.search),
-      // ),
     );
   }
 }
+
+
+
+
 
 
 

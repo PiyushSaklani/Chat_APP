@@ -45,15 +45,6 @@ class _SignUpScreen_State extends State<SignUpScreen_> {
       log("User already exists!😊");
       Navigator.pushAndRemoveUntil(context,
         MaterialPageRoute(builder: (context) => MyApp()), (route) => false);
-      // log(_firestore.collection("users").doc("name").get().toString());
-    } else {
-      // await _firestore.collection("users").doc(userCredential.user!.uid).set({
-      //   "name": userCredential.user!.displayName,
-      //   "email": userCredential.user!.email,
-      //   "image": userCredential.user!.photoURL,
-      //   "uid": userCredential.user!.uid,
-      //   "date": DateTime.now(),
-      // });
     }
     
     Navigator.push(
@@ -109,52 +100,6 @@ class _SignUpScreen_State extends State<SignUpScreen_> {
                   ],
                 ),
               ),
-              // SizedBox(
-              //   height: size.height / 13.82834,
-              //   width: size.width / 1.17548,
-              //   child: TextFormField(
-              //     cursorColor: kSecondaryColor,
-              //     controller: _name,
-              //     decoration: const InputDecoration(
-              //       focusColor: kSecondaryColor,
-              //       labelStyle: TextStyle(color: kSecondaryColor),
-              //       labelText: "Name",
-              //       prefixIcon: Icon(
-              //         Icons.person,
-              //         color: kSecondaryColor,
-              //       ),
-              //       prefixIconColor: kSecondaryColor,
-              //       hintText: "Name",
-              //       hintStyle: TextStyle(color: Colors.grey),
-              //     ),
-              //   ),
-              // ),
-              // SizedBox(
-              //   height: size.height / 82.97,
-              // ),
-              // SizedBox(
-              //   height: size.height / 13.82834,
-              //   width: size.width / 1.17548,
-              //   child: TextFormField(
-              //     cursorColor: kSecondaryColor,
-              //     controller: _nickname,
-              //     decoration: const InputDecoration(
-              //       focusColor: kSecondaryColor,
-              //       labelStyle: TextStyle(color: kSecondaryColor),
-              //       labelText: "Nickname",
-              //       prefixIcon: Icon(
-              //         Icons.face,
-              //         color: kSecondaryColor,
-              //       ),
-              //       prefixIconColor: kSecondaryColor,
-              //       hintText: "Nikename",
-              //       hintStyle: TextStyle(color: Colors.grey),
-              //     ),
-              //   ),
-              // ),
-              // SizedBox(
-              //   height: size.height / 82.97,
-              // ),
               SizedBox(
                 height: size.height / 13.82834,
                 width: size.width / 1.17548,
@@ -208,56 +153,6 @@ class _SignUpScreen_State extends State<SignUpScreen_> {
                   //? Google SignUp
                   await FirebaseAuth.instance.createUserWithEmailAndPassword(
                       email: _email.text, password: _password.text);
-
-                  // FirebaseAuth.instance.authStateChanges().listen(
-                  //   (User? user) {
-                  //     if (user != null) {
-                  //       log(user.uid);
-                  //     }
-                  //   },
-                  // );
-                  //?
-                  // await FirebaseFirestore.instance
-                  //     .collection("users")
-                  //     .where("nickname", isEqualTo: _nickname.text)
-                  //     .get()
-                  //     .then((value) async {
-                  //   if (value.docs.isEmpty) {
-                  //     await FirebaseAuth.instance
-                  //         .createUserWithEmailAndPassword(
-                  //             email: _email.text, password: _password.text);
-                  //     FirebaseAuth.instance.authStateChanges().listen(
-                  //       (User? user) {
-                  //         if (user != null) {
-                  //           log(user.uid);
-                  //           _user = user.uid;
-                  //         }
-                  //       },
-                  //     );
-                  //     await FirebaseFirestore.instance
-                  //         .collection("users")
-                  //         .doc(_user)
-                  //         .set({
-                  //       "name": _name.text,
-                  //       "email": _email.text,
-                  //       "uid": _user,
-                  //       "date": DateTime.now(),
-                  //       "nickname": _nickname.text,
-                  //       "image":
-                  //           "https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=612x612&w=0&h=lGpj2vWAI3WUT1JeJWm1PRoHT3V15_1pdcTn2szdwQ0=",
-                  //     });
-                  //     log("work done");
-                  //     Navigator.push(context,
-                  //         MaterialPageRoute(builder: (context) => MyApp()));
-                  //     return;
-                  //   } else {
-                  //     ScaffoldMessenger.of(context).showSnackBar(
-                  //       const SnackBar(
-                  //         content: Text("Nickname already taken."),
-                  //       ),
-                  //     );
-                  //   }
-                  // });
                   Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -360,86 +255,6 @@ class _SignUpScreen_State extends State<SignUpScreen_> {
               SizedBox(
                 height: size.height / 21.47,
               ),
-              //! old
-              // ElevatedButton(
-              //   onPressed: () async {
-              //     log("Button Pressed");
-              //     await signInbyGOOGLE();
-              //     log("Work Done!😍");
-              //   },
-              //   style: ButtonStyle(
-              //       backgroundColor: MaterialStateProperty.all(Colors.black)),
-              //   child: Container(
-              //     padding: const EdgeInsets.all(10),
-              //     height: 50,
-              //     width: 200,
-              //     child: Row(
-              //       mainAxisAlignment: MainAxisAlignment.center,
-              //       crossAxisAlignment: CrossAxisAlignment.center,
-              //       children: [
-              //         Image.network(
-              //             "https://www.freepnglogos.com/uploads/google-logo-png/file-google-logo-svg-wikimedia-commons-23.png")
-              //       ],
-              //     ),
-              //   ),
-              // ),
-              // GestureDetector(
-              //   onTap: () => Navigator.pop(context),
-              //   child: const Text("Login"),
-              // ),
-              // GestureDetector(
-              //   onTap: () async {
-              //     await FirebaseFirestore.instance
-              //         .collection("users")
-              //         .where("nickname", isEqualTo: _nickname.text)
-              //         .get()
-              //         .then((value) async {
-              //       if (value.docs.isEmpty) {
-              //         await FirebaseAuth.instance.createUserWithEmailAndPassword(
-              //             email: _email.text, password: _password.text);
-              //         FirebaseAuth.instance.authStateChanges().listen(
-              //           (User? user) {
-              //             if (user != null) {
-              //               log(user.uid);
-              //               _user = user.uid;
-              //             }
-              //           },
-              //         );
-              //         await FirebaseFirestore.instance
-              //             .collection("users")
-              //             .doc(_user)
-              //             .set({
-              //           "name": _name.text,
-              //           "email": _email.text,
-              //           "uid": _user,
-              //           "date": DateTime.now(),
-              //           "nickname": _nickname.text,
-              //           "image":
-              //               "https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=612x612&w=0&h=lGpj2vWAI3WUT1JeJWm1PRoHT3V15_1pdcTn2szdwQ0=",
-              //         });
-              //         log("work done");
-              //         Navigator.push(context,
-              //             MaterialPageRoute(builder: (context) => MyApp()));
-              //         return;
-              //       } else {
-              //         ScaffoldMessenger.of(context).showSnackBar(
-              //           const SnackBar(
-              //             content: Text("Nickname already taken."),
-              //           ),
-              //         );
-              //       }
-              //     });
-              //   },
-              //   child: Container(
-              //     height: size.height / 14,
-              //     width: size.width / 1.2,
-              //     decoration: BoxDecoration(
-              //         borderRadius: BorderRadius.circular(20),
-              //         color: Colors.blue),
-              //     alignment: Alignment.center,
-              //     child: const Text("SignUp"),
-              //   ),
-              // ),
             ],
           ),
         ),

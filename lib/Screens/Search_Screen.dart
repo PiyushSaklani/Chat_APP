@@ -98,7 +98,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       color: kSecondaryColor.withOpacity(.3),
                       spreadRadius: 5,
                       blurRadius: 10,
-                      offset: const Offset(0, 3), // changes position of shadow
+                      offset: const Offset(0, 3),
                     ),
                   ],
                 ),
@@ -136,7 +136,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           spreadRadius: 5,
                           blurRadius: 10,
                           offset:
-                              const Offset(0, 3), // changes position of shadow
+                              const Offset(0, 3),
                         ),
                       ],
                     ),
@@ -174,7 +174,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           spreadRadius: 5,
                           blurRadius: 10,
                           offset:
-                              const Offset(0, 3), // changes position of shadow
+                              const Offset(0, 3),
                         ),
                       ],
                     ),
