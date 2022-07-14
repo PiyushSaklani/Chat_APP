@@ -15,42 +15,16 @@ class ProfileScreen extends StatefulWidget {
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
+
 class _ProfileScreenState extends State<ProfileScreen> {
   final TextEditingController _about = TextEditingController();
   final TextEditingController _nickname = TextEditingController();
   late String newAbout = "";
   late String _user;
-  // final Stream<DocumentSnapshot> _usersStream = FirebaseFirestore.instance
-  //     .collection('users')
-  //     .doc("1nOwfs4gsGeSOoxg7tipZQnTH7C3")
-  //     .snapshots();
-
-  // getResult() {
-  //   FirebaseAuth.instance.authStateChanges().listen(
-  //     (User? user) {
-  //       if (user != null) {
-  //         log(user.uid);
-  //         _user = user.uid;
-  //       }
-  //     },
-  //   );
-  //   CollectionReference users = FirebaseFirestore.instance.collection("users");
-  //   users.doc(_user).snapshots().listen((result) {
-  //     log(result.get("about"));
-  //     var name = result.get("about");
-  //     return name;
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
-    // UserModel UM = UserModel.fromJson(FirebaseFirestore.instance
-    //   .collection("users")
-    //   .doc(FirebaseAuth.instance.currentUser!.uid)
-    //   .get() as DocumentSnapshot<Object?>);
-    // String About = widget.user.about;
     final size = MediaQuery.of(context).size;
-    // var name2 = getResult();
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -65,7 +39,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(
                 height: size.width / 1.3,
                 child: Stack(
-                  // alignment: Alignment.bottomLeft,
                   children: [
                     Container(
                       height: size.width,
