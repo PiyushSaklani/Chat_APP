@@ -54,11 +54,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       margin: const EdgeInsets.only(top: 60, left: 115),
                       height: size.width / 2,
                       // color: Colors.red,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: NetworkImage(widget.user.image),
-                              fit: BoxFit.fitWidth)),
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                      ),
                       child: CircleAvatar(
                         radius: 100,
                         backgroundImage: NetworkImage(widget.user.image),
